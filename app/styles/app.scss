@@ -1,2 +1,29 @@
 /* Ember supports plain CSS out of the box. More info: https://cli.emberjs.com/release/advanced-use/stylesheets/ */
 @import "table-component";
+
+/**
+ * Base Elements
+ */
+
+ * {
+    margin: 0;
+    padding: 0;
+  }
+  
+  body,
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6,
+  p,
+  div,
+  span,
+  a,
+  button {
+    font-family: Lato, "Open Sans", "Helvetica Neue", "Segoe UI", Helvetica, Arial,
+      sans-serif;
+    line-height: 1.5;
+  }
+  

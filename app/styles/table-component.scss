@@ -21,14 +21,6 @@
       padding-left: 10px;
     }
 
-    tbody tr:hover:not(.row-selected) {
-      background-color: rgb(238 236 236);
-    }
-    
-    .row-selected {
-      background-color: rgb(170 168 168);
-    }
-    
     .download-button {
       border: none;
       background-color: inherit;
@@ -41,19 +33,35 @@
     .download-button:hover {
       background-color: lightgray;
     }
-    
+
     .selected-text {
       min-width: 120px;
     }
+
+    tbody {
+      tr {
+        &:hover {
+          cursor: pointer;
+
+          &:not(.row-selected) {
+            background-color: rgb(238 236 236);
+          }
+        }
+      }
+    }
     
+    .row-selected {
+      background-color: rgb(170 168 168);
+    }
+
     .status {
       position: relative;
 
       .status-icon {
         position: absolute;
         left: -12px;
-        bottom: 2px;
-        font-size: 40px;
+        bottom: -19px;
+        font-size: 60px;
         color: lightgreen;
       }
       
@@ -61,7 +69,5 @@
         text-transform: capitalize;
       }
     }
-    
-
   }
   
