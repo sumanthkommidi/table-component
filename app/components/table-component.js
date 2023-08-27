@@ -34,8 +34,6 @@ export default class TableComponentComponent extends Component {
   @action handleSelectAll() {
     if (this.selectedRows.every(Boolean)) {
       this.selectedRows = new Array(this.numberOfRows).fill(false);
-    } else if (this.selectedRows.some(Boolean)) {
-      this.selectedRows = new Array(this.numberOfRows).fill(true);
     } else {
       this.selectedRows = new Array(this.numberOfRows).fill(true);
     }
