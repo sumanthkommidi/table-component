@@ -1,0 +1,43 @@
+<div class="table-container">
+  <table >
+  <thead>
+    <tr>
+      <th><input data-test-select-all aria-label="Select All" type="checkbox" checked={{this.isAllSelected}} indeterminate={{this.isIndeterminate}} {{on 'click' this.handleSelectAll}}/></th>
+      <th class="selected-text">
+        {{#if this.numberOfRowsSelected}}
+          Selected {{this.numberOfRowsSelected}}
+        {{else}}
+          None Selected
+        {{/if}}
+      </th>
+      <th><button aria-label="Download Selected Files " type="button" class="download-button" {{on 'click' this.downloadSelectedFiles}}><span>&#x2B07;</span> Download Selected</button></th>
+    </tr>
+    <tr>
+      <th></th>
+      <th>Name</th>
+      <th>Device</th>
+      <th>Path</th>
+      <th>Status</th>
+    </tr>
+    </thead>
+    <tbody>
+      {{#each @data as |item index|}}
+      <tr class={{if (get this.selectedRows index) 'row-selected' 'not-selected'}} {{on 'click' (fn this.selectRow index)}}>
+        <td>
+            <Input data-test-row-checkbox aria-label="select row {{add index 1}}" @type="checkbox" @checked={{get this.selectedRows index}} />
+        </td>
+        <td>{{item.name}}</td>
+        <td>{{item.device}}</td>
+        <td>{{item.path}}</td>
+        <td class="status">
+          {{#if (eq item.status 'available')}}
+            <span class="status-icon">&#8226;</span>  
+          {{/if}}
+          
+          <span class="status-text">{{item.status}}</span>
+        </td>
+      </tr>
+      {{/each}}
+    </tbody>
+  </table>
+</div>

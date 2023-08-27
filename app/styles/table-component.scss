@@ -1,0 +1,67 @@
+.table-container {
+    table,
+    th,
+    td {
+      border-bottom: 1px solid lightgray;
+      border-top: 1px solid lightgray;
+    }
+    
+    table {
+      width: 100%;
+      border-collapse: collapse;
+    }
+    
+    tr {
+      height: 50px;
+      text-align: left;
+    }
+    
+    th,
+    td {
+      padding-left: 10px;
+    }
+
+    tbody tr:hover:not(.row-selected) {
+      background-color: rgb(238 236 236);
+    }
+    
+    .row-selected {
+      background-color: rgb(170 168 168);
+    }
+    
+    .download-button {
+      border: none;
+      background-color: inherit;
+      padding: 14px 28px;
+      font-size: 16px;
+      cursor: pointer;
+      display: inline-block;
+    }
+    
+    .download-button:hover {
+      background-color: lightgray;
+    }
+    
+    .selected-text {
+      min-width: 120px;
+    }
+    
+    .status {
+      position: relative;
+
+      .status-icon {
+        position: absolute;
+        left: -12px;
+        bottom: 2px;
+        font-size: 40px;
+        color: lightgreen;
+      }
+      
+      .status-text {
+        text-transform: capitalize;
+      }
+    }
+    
+
+  }
+  
